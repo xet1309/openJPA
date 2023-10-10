@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="myPU">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <class>org.example.Reiziger</class>
+        <class>org.example.Adres</class>
+        <class>org.example.OvChipKaart</class>
+        <class>org.example.Product</class>
+        <!-- Voeg hier je entiteitsklassen toe -->
+        <!-- Andere configuratie-opties voor je JPA-eenheid -->
+        <properties>
+            <!-- Database-verbindingseigenschappen -->
+
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ovchip"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="99vm83ks"/>
+
+            <!-- OpenJPA-specifieke eigenschappen -->
+            <property name="openjpa.ConnectionFactoryName" value="jndi/MyDataSource"/>
+            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+
+            <!-- Andere JPA-configuratie-opties -->
+            <property name="openjpa.RuntimeUnenhancedClasses" value="supported" />
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
