@@ -9,12 +9,22 @@ Pawel Kubosz, Justin Campell, Xavier Tromp
 # Inhoudsopgave
 
 - [Inhoudsopgave](#Inhoudsopgave)
+
+
 - [Introductie](#Introductie)
-- [Geschiedenis en fabrikanten](#Geschiedenis-en-fabrikanten)
-- [Over elke fabrikant](#Over-elke-fabrikant)
+
+
+- [Geschiedenis](#Geschiedenis)
+
+
+- [De fabrikanten](#De-fabrikanten)
   - [BEA Systems](#BEA-Systems)
   - [Apache Software Foundation](#Apache-Software-Foundation)
-- [Wijze van gebruik](#Wijze-van-gebruik)
+
+
+- [Installatie en gebruik](#Installatie-en-gebruik)
+
+
 - [OpenJPA vergeleken met andere JPA's](#OpenJPA-vergeleken-met-andere-JPAs)
   - [Manier van installatie en configuratie](#Manier-van-installatie-en-configuratie)
   - [Populariteit](#Populariteit)
@@ -23,43 +33,49 @@ Pawel Kubosz, Justin Campell, Xavier Tromp
   - [Nadelen ten opzichte van Hibernate](#Nadelen-ten-opzichte-van-Hibernate)
 
   
-# Introductie
-OpenJPA is een open source-implementatie van de Java Persistence API-specificatie. Het is een object-relationele mapping (ORM)-oplossing voor de Java-taal, die het opslaan van objecten in databases vereenvoudigt. 
+## Introductie
+OpenJPA is een open source-implementatie van de JPA (Java Persistence API)-specificatie. 
+Het is een object-relationele mapping (ORM)-oplossing voor de Java-taal, die het opslaan van objecten in databases vereenvoudigt. 
 Het is open-source software die wordt gedistribueerd onder de Apache-licentie 2.0.
 
-OpenJPA is een open source-implementatie van de Java JPA-specificatie (Java Persistence API) van Apache. 
-JPA biedt een agnostische op Java gebaseerde API voor het opslaan en ophalen van informatie in een backend-database. 
-Het heeft een canonieke querytaal genaamd Java Persistence Query Language, of JPQL, die past bij de programmeermethoden van Java en de noodzaak elimineert om databasequery's op maat te maken voor een bepaalde database. 
+OpenJPA is een open source-implementatie van de Java JPA-specificatie van Apache. 
+JPA biedt een overzichtelijke API voor het opslaan en ophalen van informatie in een backend-database. 
+Het heeft een query-taal genaamd Java Persistence Query Language, of JPQL, die past bij de programmeermethoden van Java en elimineert de noodzaak om databasequery's op maat te maken voor een bepaalde database. 
 JPA ondersteunt echter ook native SQL die kan worden gebruikt voor snelle poorten met een bekende backend-database. 
-Deze tutorial is bedoeld om u door de stappen te leiden van het opzetten van een eenvoudige webapplicatie om OpenJPA Geronimo te gebruiken en om transacties uit te voeren met de Derby-database die bij Geronimo wordt geleverd. 
-De tutorialcode maakt gebruik van een eenvoudige Java Server Page (JSP), ondersteund door enkele basisklassen. Het toont een tabel met inventarisitems en categorieën. 
+Deze tutorial is bedoeld om je door de stappen te leiden van het opzetten van een eenvoudige webapplicatie om OpenJPA Geronimo te gebruiken.
+En om transacties uit te voeren met de Derby-database die bij Geronimo wordt geleverd. 
+De tutorial-code maakt gebruik van een eenvoudige Java Server Page (JSP), ondersteund door enkele basisklassen. 
+Het toont een tabel met inventarisitems en categorieën. 
 In deze tutorial gaan we niet in op details met betrekking tot de JSP-code. 
-Het doel ervan is om een venster te zijn waardoor u OpenJPA kunt onderzoeken. 
-Het beoogde publiek voor deze tutorial bestaat uit mensen met enige kennis en begrip van de Java-programmeertaal en die net beginnen met OpenJPA.
+Het doel ervan is om een venster te zijn waardoor je OpenJPA kunt onderzoeken. 
+De doelgroep voor deze tutorial zijn mensen met al enige kennis en begrip van de Java-programmeertaal en die net beginnen met OpenJPA.
 
-## Geschiedenis en fabrikanten
-In 2005 hebben BEA Systems de Kodo geëxpandeerd om een implementatie te zijn van beide JDO, als de JPA. 
-Kodo is een Java Data Objects implementatie die oorspronkelijk ontwikkeld werd door SolarMetric in 2001. 
-Zij werden ook in 2005 gekocht door BEA Systems. 
+## Geschiedenis
+In 2005 heeft BEA Systems de Kodo geëxpandeerd om een implementatie te zijn van zowel JDO als JPA. 
+Kodo is een Java Data Objects implementatie die in 2001 oorspronkelijk ontwikkeld werd door SolarMetric. 
+Dit bedrijf werd in 2005 door BEA Systems gekocht.
 In 2006 werd een groot stuk van de Kodo source code aan de Apache Software Foundation gedoneerd onder de naam van OpenJPA.
 
-## Over elke fabrikant
+## De fabrikanten
 
 ### BEA Systems
-BEA systems Inc. Was een merk dat zich specialiseerde in de infrastructuur van softwareproducten. 
-In 2008 was het overgenomen door Oracle Corporation.
+BEA systems Inc. was een bedrijf gespecialiseerd in de infrastructuur van softwareproducten. 
+In 2008 is het overgenomen door Oracle Corporation.
 
 ### Apache Software Foundation
-De Apache Software Foundation is een amerikaanse non-profitorganisatie die zich bezighoudt met de ontwikkeling en ondersteuning van open-source softwareprojecten. 
+De Apache Software Foundation is een Amerikaanse non-profitorganisatie, die zich bezighoudt met de ontwikkeling en ondersteuning van open-source softwareprojecten. 
 Opgericht in 1999, heeft de Apache Software Foundation (ASF) als doel om hoogwaardige, community-gedreven softwareprojecten te bevorderen en te verspreiden.
 
-## Wijze van gebruik
-OpenJPA opereert op een query taal die Java Persistence Query Language heet. Of JPQL in het kort. 
-Het is een java gebaseerde API voor het opslaan en ophalen van informatie voor het backend. 
+## Installatie en gebruik
+OpenJPA opereert op een query taal die Java Persistence Query Language heet. Oftewel JPQL in het kort. 
+Het is een java gebaseerde API voor het opslaan en ophalen van informatie voor de backend. 
 
-Zo kan je het openJPA in intellij gebruiken:
+Hoe gebruik je openJPA in IntelliJ:
 
-Eerst moet je het openJPA dependency toevoegen aan jouw project met behulp van het pom.xml als je maven gebruikt. Dit is de dependency die je moet toevoegen:
+- ### Stap 1: 
+
+  Het openJPA dependency toevoegen aan jouw project met behulp van het pom.xml als je Maven gebruikt.
+  Dit is de dependency die je moet toevoegen:
 
 ``` xml
 <dependencies>
@@ -77,7 +93,9 @@ Eerst moet je het openJPA dependency toevoegen aan jouw project met behulp van h
 </dependencies>
 ```
 
-Daarna moet je een persistence.xml aanmaken in je project in de ‘src/main/recourses/META-INF’ directory. 
+- ### stap 2: 
+
+  Een persistence.xml aanmaken in jouw project in de ‘src/main/recourses/META-INF’ directory. 
 Dit bestand wordt gebruikt om de persistentie-eenheid te configureren.
 
 Zo kan een persistence.xml bestand er uit zien:
@@ -148,10 +166,10 @@ Zo kan een persistence.xml bestand er uit zien:
 ```
 
 
-Na deze stappen kan je het openJPA in je java code gerbuiken. 
-Je kan entiteiten aanmaken en er operaties op uitvoeren met het gebruik van de ‘EntityManager’
+Na deze stappen kan je openJPA in jouw java code gebruiken. 
+Je kan entiteiten aanmaken en er operaties op uitvoeren met het gebruik van de ‘EntityManager’.
 
-In de onderstaande voorbeeldcode moet 'myPersistenceUnit' overeenkomen met de naam van de persistentie-eenheid die is opgegeven in je persistence.xml-bestand. 
+In de onderstaande voorbeeldcode moet 'myPersistenceUnit' overeenkomen met de naam van de persistentie-eenheid, die is opgegeven in jouw persistence.xml-bestand. 
 Hieronder staat hoe je de CRUD-functies gebruikt met openJPA: 
 
 ``` Java
@@ -189,42 +207,55 @@ emf.close();
 
 
 # OpenJPA vergeleken met andere JPA's
-###
+####
 ## Manier van installatie en configuratie
 OpenJPA wordt net zoals bijvoorbeeld Hibernate & Eclips Link in een project gezet met behulp van een jar bestand. 
 Hiernaast kan je in openJPA configuraties toevoegen met behulp van xml.
 
 ## Populariteit
-OpenJPA is helemaal niet populair en heeft een kleine community. 
-Het heeft maar een marktaandeel van 0.05%. Ook wordt de site zelden geupdated.
+OpenJPA is niet erg populair en heeft maar een kleine community. 
+Het heeft een marktaandeel van slechts 0.05%. En de site wordt zelden geupdated.
 
 ![markt percentage OpenJPA](openJPAMarketShare.png)
 ###
 ## Documentatie
 Het is lastig om bronnen en informatie te vinden over openJPA, omdat het zo weinig gebruikt wordt. 
-Op Youtube is er bijna niks over te vinden en maar weinig websites behandelen OpenJPA, zo ook Stack Overflow. 
+Op Youtube is er bijna niks over te vinden. En maar weinig websites behandelen OpenJPA. 
+Zelfs op Stack Overflow is er weinig informatie. 
 De enige website die uitleg geeft over openJPA, is de website van openJPA zelf. 
-Als je dit vergelijkt met Hibernate of Eclips Link is openJPA een kleine speler.
+Als je dit vergelijkt met Hibernate of Eclips Link is openJPA een kleine speler in de markt.
 
 ## Voordelen ten opzichte van andere JPA's
 
-- **Eenvoudig te integreren met Appache-softwarestack:** 
-OpenJPA is van Appache en is hierdoor makkelijk te integreren met Appache-softwarestacks.
+- ### Eenvoudig te integreren met Appache-softwarestack:
 
-- **Modulaire structuur:** 
-OpenJPA heeft een modulair structuur, wat betekent dat het uit verschillende componenten bestaat die onafhankelijk kunnen gebruikt worden. 
-Hierdoor kun je ervoor kiezen om alleen gedeeltes van de bibliotheek te kunnen gebruiken die je nodig hebt. 
-Hierdoor heb je in je project niet ongebruikte functies zitten. 
-Hibernate heeft een monolithische structuur, waardoor je soms meer opneemt in je project dan dat je eigenlijk nodig hebt.
+  OpenJPA is van Appache en is hierdoor makkelijk te integreren met Appache-softwarestacks.
 
-- **Snellere prestaties:** 
-Vanwege de modulaire structuur, kan OpenJPA sneller en efficiënter werken dan Hibernate.
+
+- ### Modulaire structuur:
+
+  OpenJPA heeft een modulaire structuur. 
+  Dit betekent dat het uit verschillende componenten bestaat, die onafhankelijk gebruikt kunnen worden. 
+  Daardoor kun je ervoor kiezen om alleen die gedeeltes van de bibliotheek te gebruiken die je nodig hebt. 
+  Hierdoor heb je geen ongebruikte functies in je project. 
+  Hibernate heeft een monolithische structuur, waardoor je soms meer opneemt in je project dan dat je eigenlijk nodig hebt.
+
+
+- ### Snellere prestaties:
+
+  Vanwege de modulaire structuur, kan OpenJPA sneller en efficiënter werken dan Hibernate.
 
 ## Nadelen ten opzichte van Hibernate
 
-- Weinig bronnen: Er is niet veel informatie te vinden over OpenJPA, omdat het weinig gebruikt wordt. 
-Hierom is het dus lastig OpenJPA te leren en om oplossingen te kunnen vinden bij bepaalde problemen, in tegendeel tot Hibernate & EclipseLink waarvan er genoeg informatie over te vinden is.
-- Minder integratie met moderne technologieën: Hibernate heeft zich aangepast aan het ondersteunen van moderne technologieën zoals bijvoorbeeld microservices integendeel tot OpenJPA, dat vanwege de kleine community niet vaak geupdated wordt.
+- ### Weinig bronnen: 
+
+  Er is niet veel informatie te vinden over OpenJPA, waarschijnlijk omdat het zo weinig gebruikt wordt. 
+  Hierdoor is het lastig OpenJPA te leren en om oplossingen te vinden bij de problemen die je tegenkomt.
+  Dit in tegenstelling tot Hibernate & EclipseLink. 
+  Over deze JPA's is er genoeg informatie te vinden.
 
 
+- ### Minder integratie met moderne technologieën:
 
+  Hibernate wordt voortdurend verder ontwikkeld, zodat het moderne technologieën (zoals bijvoorbeeld Microservices) kan ondersteunen. 
+  Dit integenstelling tot OpenJPA, dat niet vaak geüpdatet wordt.
