@@ -36,19 +36,7 @@ Pawel Kubosz, Justin Campell, Xavier Tromp
 ## Introductie
 OpenJPA is een open source-implementatie van de JPA (Java Persistence API)-specificatie. 
 Het is een object-relationele mapping (ORM)-oplossing voor de Java-taal, die het opslaan van objecten in databases vereenvoudigt. 
-Het is open-source software die wordt gedistribueerd onder de Apache-licentie 2.0.
-
-OpenJPA is een open source-implementatie van de Java JPA-specificatie van Apache. 
-JPA biedt een overzichtelijke API voor het opslaan en ophalen van informatie in een backend-database. 
-Het heeft een query-taal genaamd Java Persistence Query Language, of JPQL, die past bij de programmeermethoden van Java en elimineert de noodzaak om databasequery's op maat te maken voor een bepaalde database. 
-JPA ondersteunt echter ook native SQL die kan worden gebruikt voor snelle poorten met een bekende backend-database. 
-Deze tutorial is bedoeld om je door de stappen te leiden van het opzetten van een eenvoudige webapplicatie om OpenJPA Geronimo te gebruiken.
-En om transacties uit te voeren met de Derby-database die bij Geronimo wordt geleverd. 
-De tutorial-code maakt gebruik van een eenvoudige Java Server Page (JSP), ondersteund door enkele basisklassen. 
-Het toont een tabel met inventarisitems en categorieën. 
-In deze tutorial gaan we niet in op details met betrekking tot de JSP-code. 
-Het doel ervan is om een venster te zijn waardoor je OpenJPA kunt onderzoeken. 
-De doelgroep voor deze tutorial zijn mensen met al enige kennis en begrip van de Java-programmeertaal en die net beginnen met OpenJPA.
+Het is open-source software die wordt gedistribueerd onder de Apache-licentie 2.0. OpenJPA heeft ook een query-taal genoemd Java Persistence Query Language, of JPQL in het kort.
 
 ## Geschiedenis
 In 2005 heeft BEA Systems de Kodo geëxpandeerd om een implementatie te zijn van zowel JDO als JPA. 
