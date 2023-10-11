@@ -25,7 +25,7 @@ Pawel Kubosz, Justin Campell, Xavier Tromp
   
 # Introductie
 OpenJPA is een open source-implementatie van de Java Persistence API-specificatie. Het is een object-relationele mapping (ORM)-oplossing voor de Java-taal, die het opslaan van objecten in databases vereenvoudigt. 
-Het is open-sourcesoftware die wordt gedistribueerd onder de Apache-licentie 2.0.
+Het is open-source software die wordt gedistribueerd onder de Apache-licentie 2.0.
 
 OpenJPA is een open source-implementatie van de Java JPA-specificatie (Java Persistence API) van Apache. 
 JPA biedt een agnostische op Java gebaseerde API voor het opslaan en ophalen van informatie in een backend-database. 
@@ -64,17 +64,17 @@ Eerst moet je het openJPA dependency toevoegen aan jouw project met behulp van h
 ``` xml
 <dependencies>
 
-`        `<dependency>
+  <dependency>
 
-`            `<groupId>org.apache.openjpa</groupId>
+    <groupId>org.apache.openjpa</groupId>
 
-`            `<artifactId>openjpa</artifactId>
+    <artifactId>openjpa</artifactId>
 
-`            `<version>3.2.2</version> <!-- De versie kan variëren afhankelijk van de beschikbare versies -->
+    <version>3.2.2</version> <!-- De versie kan variëren afhankelijk van de beschikbare versies -->
 
-`        `</dependency>
+  </dependency>
 
-`    `</dependencies>
+</dependencies>
 ```
 
 Daarna moet je een persistence.xml aanmaken in je project in de ‘src/main/recourses/META-INF’ directory. 
@@ -148,14 +148,6 @@ Zo kan een persistence.xml bestand er uit zien:
 ```
 
 
-
-
-
-
-
-
-
-
 Na deze stappen kan je het openJPA in je java code gerbuiken. 
 Je kan entiteiten aanmaken en er operaties op uitvoeren met het gebruik van de ‘EntityManager’
 
@@ -193,9 +185,6 @@ em.close();
 emf.close();
 ```
 #
-
-
-
 
 
 
